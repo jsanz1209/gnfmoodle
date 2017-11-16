@@ -1,0 +1,136 @@
+<ion-view view-title="{{ 'mm.courses.mycourses' | translate }}">
+    <ion-nav-buttons side="secondary">
+        <a ui-sref="site.mm_searchcourses" ng-if="searchEnabled" class="button button-icon ion-ios-search-strong"></a>
+    </ion-nav-buttons>
+    <ion-content padding="true" mm-state-class>
+        <!-- ion-refresher needs to be direct child of ion-content to work with native scrolling -->
+        <ion-refresher pulling-text="{{ 'mm.core.pulltorefresh' | translate }}" ng-if="coursesLoaded" on-refresh="refreshCourses()">
+        </ion-refresher>
+
+        <mm-loading hide-until="coursesLoaded">
+            <div ng-if="courses && courses.length > 2" class="item item-transparent item-input-inset">
+                <ion-input class="item-input-wrapper">
+                    <i class="icon ion-search placeholder-icon"></i>
+                    <input type="text" placeholder="{{ 'mm.courses.filtermycourses' | translate}}" ng-model="filter.filterText">
+                </ion-input>
+            </div>
+
+          <hr ng-show="courses.length > 0">
+          <section layout="row" layout-align="center center" layout-wrap ng-show="courses && courses.length > 2">
+            <md-button class="md-raised" ng-click="isiVisibleSort=!isiVisibleSort">
+                <md-icon md-svg-src="img/custom/sort.svg"></md-icon>
+                {{ 'mm.courses.order' | translate }}
+            </md-button>
+             <md-button class="md-raised" ng-click="isVisibleFilter=!isVisibleFilter">
+                <md-icon md-svg-src="img/custom/filter.svg"></md-icon>
+                Filtrar
+            </md-button>
+          </section>
+
+          <div class="container-main-settings" ng-show="isiVisibleSort">
+            <p class="title-header">{{ 'mm.courses.orderBy' | translate }}</p>
+            <div layout="{{layout}}" class="container-settings">
+                <div class="title-option-setting">
+                  <p>{{ 'mm.courses.itinerary' | translate }}</p>
+                </div>
+                <div flex>
+                    <md-fab-toolbar md-open="optionSortCatname.isOpen" count="optionSortCatname.count"
+                                    md-direction="{{optionSortCatname.selectedDirection}}">
+                      <md-fab-trigger class="align-with-text">
+                        <md-button aria-label="asc" class="md-fab" ng-class="optionSortCatname.optionSel != '' && optionSortCatname.isOpen == true ? 'button-option-fab-bar-select': 'md-color-default'">
+                          <md-icon md-svg-src="{{ getIconSelected(optionSortCatname) }}"></md-icon>
+                        </md-button>
+                      </md-fab-trigger>
+
+                      <md-toolbar>
+                        <md-fab-actions class="md-toolbar-tools">
+                          <p class="title-option">{{ optionSortCatname.selectOrderCatnameCriterion }}</p>
+                          <md-button aria-label="desc" class="md-icon-button button-option-fab-bar" ng-class="{'button-option-fab-bar-select': optionSortCatname.optionSel == 'asc'}" ng-click="changeValueSortCatname('asc', $event)">
+                            <md-icon md-svg-src="img/custom/sortasc.svg"></md-icon>
+                          </md-button>
+                          <md-button aria-label="desc" class="md-icon-button button-option-fab-bar" ng-class="{'button-option-fab-bar-select': optionSortCatname.optionSel == 'desc'}" ng-click="changeValueSortCatname('desc', $event)">
+                            <md-icon md-svg-src="img/custom/sortdesc.svg"></md-icon>
+                          </md-button> 
+                        </md-fab-actions>
+                      </md-toolbar>
+                    </md-fab-toolbar>
+                  </div>
+                 
+                 <div class="title-option-setting" ng-show="!isLargeScreen">
+                    <p>{{ 'mm.courses.status' | translate }}</p>
+                  </div>
+                  <div flex>
+                    <md-fab-toolbar md-open="optionSortStatus.isOpen" count="optionSortStatus.count"
+                                    md-direction="{{optionSortStatus.selectedDirection}}">
+                      <md-fab-trigger class="align-with-text">
+                        <md-button aria-label="menu" class="md-fab" ng-class="optionSortStatus.optionSel != '' && optionSortStatus.isOpen == true ? 'button-option-fab-bar-select': 'md-color-default'">
+                          <md-icon md-svg-src="{{ getIconSelected(optionSortStatus) }}"></md-icon>
+                        </md-button>
+                      </md-fab-trigger>
+
+                      <md-toolbar>
+                        <md-fab-actions class="md-toolbar-tools">
+                          <p class="title-option" ng-bind-html="optionSortStatus.selectOrderStatusCriterion"></p>
+                          <md-button aria-label="asc" class="md-icon-button button-option-fab-bar" ng-class="{'button-option-fab-bar-select': optionSortStatus.optionSel == 'status'}" ng-click="changeValueSortStatus('status', $event)">
+                            <md-icon md-svg-src="img/custom/sortstatus.svg"></md-icon>
+                          </md-button>
+                          <md-button aria-label="desc" class="md-icon-button button-option-fab-bar" ng-class="{'button-option-fab-bar-select': optionSortStatus.optionSel == 'statusinverse'}" ng-click="changeValueSortStatus('statusinverse', $event)">
+                            <md-icon md-svg-src="img/custom/sortstatusinverse.svg"></md-icon>
+                          </md-button> 
+                        </md-fab-actions>
+                      </md-toolbar>
+                    </md-fab-toolbar>
+                  </div>
+                   <div class="title-option-setting" ng-show="isLargeScreen">
+                    <p>{{ 'mm.courses.status' | translate }}</p>
+                  </div>
+              </div>
+            </div>
+
+            <div class="container-main-settings" ng-show="isVisibleFilter">
+              <p class="title-header">{{ 'mm.courses.filterBy' | translate }}</p>
+              <div layout="row" layout-xs="column" class="container-settings">
+                <div flex class="container-select">  
+                    <md-input-container class="margin-input-container">
+                      <label>{{ 'mm.courses.status' | translate }}</label>
+                      <md-select id="selectStatus" ng-model="selectedStatus" multiple ng-change="onChangeStatusFilter(selectedStatus)" md-on-close="onCloseSelectStatus(selectedStatus)" md-on-open="onOpenSelectStatus()">
+                        <md-optgroup label="Estado">
+                          <md-option ng-value="statusItem.name" ng-repeat="statusItem in status">{{statusItem.name}}</md-option>
+                        </md-optgroup>  
+                      <div layout="row" layout-align="center center">
+                        <md-button md-no-ink class="md-primary" ng-click="acceptFilterStatus()">{{ 'mm.courses.accept' | translate }}</md-button>     
+                        <md-button md-no-ink class="md-primary" ng-click="cancelFilterStatus()">{{ 'mm.courses.cancel' | translate }}</md-button>            
+                      </div>
+                      </md-select>
+                    </md-input-container>
+                    <md-input-container class="margin-input-container"> 
+                        <label>{{ 'mm.courses.category' | translate }}</label>
+                        <md-select id="selectCategory" ng-model="selectedCategory" multiple ng-change="onChangeCategoryFilter(selectedCategory)" md-on-close="onCloseSelectCategory(selectedCategory)" md-on-open="onOpenSelectCategory()">
+                          <md-optgroup label="Categoría">
+                            <md-option ng-value="category.name" ng-repeat="category in categories">{{category.name}}</md-option>
+                          </md-optgroup>  
+                          <div layout="row" layout-align="center center">
+                            <md-button md-no-ink class="md-primary" ng-click="acceptFilterCategory()">{{ 'mm.courses.accept' | translate }}</md-button>     
+                            <md-button md-no-ink class="md-primary" ng-click="cancelFilterCategory()">{{ 'mm.courses.cancel' | translate }}</md-button>    
+                        </div>                          
+                        </md-select>                      
+                    </md-input-container>  
+                  </div>
+              </div>
+            </div>
+
+            <div class="containerFilterApply" ng-show="checkVisibilityFilters()" ng-click="clearFilters(selectedStatus, selectedCategory)">
+                <p class="">{{ 'mm.courses.filterApplied' | translate }}
+                    <img src="img/custom/clear.svg" class="smallicon">
+                </p>
+            </div>
+
+            <div class="mm-course-grid">
+                <mm-course-list-progress ng-repeat="course in courses | filter:filterName | filter:filterStatus | filter: filterCategory | orderBy: orderSelect.orderByParam" course="course" show-summary="false"></mm-course-list-progress>
+            </div>
+            <mm-empty-box ng-if="!courses || !courses.length" icon="ion-ionic" message="{{ 'mm.courses.nocourses' | translate }}">
+                <p ng-if="searchEnabled">{{ 'mm.courses.searchcoursesadvice' | translate }}</p>
+            </mm-empty-box>
+        </mm-loading>
+    </ion-content>
+</ion-view>

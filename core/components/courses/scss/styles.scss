@@ -1,0 +1,443 @@
+$chart-size: 70px;
+$doughnut-border-size: 15px;
+$doughnut-dasharray: 173;
+$doughnut-empty-colour: $gray-light;
+$doughnut-fill-colour: $mm-color-light;
+$doughnut-border-colour:  $gray-dark;
+$doughnut-text-colour: $gray-darker;
+
+
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  animation: #{$str};      
+}
+
+.card-course-disabled {
+  background: linear-gradient(-30deg,#ECF1FE 0%,#ECF1FE 45%, $gray 45%, $gray 100%) !important;
+  pointer-events: none;
+}
+
+.bg-course-complete {
+    background: linear-gradient(-30deg,#ECF1FE 0%,#ECF1FE 45%,#C5E0B4 45%,#C5E0B4 100%);
+}
+
+.bg-course-in-progress {
+    background: linear-gradient(-30deg,#ECF1FE 0%,#ECF1FE 45%,#FEE599 45%,#FEE599 100%);
+}
+
+.bg-course-pending {
+  background: linear-gradient(-30deg,#ECF1FE 0%,#ECF1FE 45%,#D3E0FD 45%,#D3E0FD 100%);
+}
+
+.title-option {
+  display: table-cell;
+  vertical-align: middle;
+  pointer-events: none;
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+
+.button-option-fab-bar {
+  width: 50px !important;
+  height: 50px !important;
+  background: transparent !important;
+}
+
+
+.button-option-fab-bar-select {
+  background-color: $turquoise !important;
+}
+
+.md-color-default {
+  background-color: $gray-dark !important;
+}
+
+
+
+md-icon {
+    height: auto !important;
+}
+
+.md-select-value > span:not(.md-select-icon) {
+    max-width: 70vw !important;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 1 auto;
+    flex: 1 1 auto;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+
+md-option .md-text {
+  white-space: normal !important;
+}
+
+.container-select {
+  padding-left: 1rem;
+}
+
+.title-option-setting {
+  display: flex;
+  align-items: center;
+  font-size: $font-size-base;
+  color: $black;
+  font-weight: bold;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-bottom: 0rem;
+  padding-top: 0.5rem;
+}
+
+
+.item-course {
+  background: transparent !important;
+  padding-right: 1rem;
+
+  >.icon, >ion-spinner {
+    height: 32px + ($item-padding /2);
+    width: 32px + ($item-padding /2);
+    right: 0;
+    top: 6px;
+    color: $doughnut-text-colour;
+    position: absolute;
+  }
+
+  .textPath span {
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    display: -webkit-box !important;
+    -webkit-box-orient: vertical !important;
+    -webkit-line-clamp: 2 !important;  
+    font-weight: normal;
+    width: 92%;
+  }
+
+  .textName span {
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    display: -webkit-box !important;
+    -webkit-box-orient: vertical !important;
+    -webkit-line-clamp: 2 !important;  
+    font-weight: bold;
+  }
+
+  hr.style-course {
+    color: $blue;
+  }
+
+  .row-custom {
+    padding: 0px !important;
+  }
+
+  .containerInfo {
+    background: rgba(255, 255, 255, 0.8);
+    padding-right: 0.75rem;
+    padding-left: 0.5rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+    padding-bottom:1rem;
+    padding-top: 1rem;
+    border-style: solid;
+    border-width: 1px;
+    display: inline-grid;
+    width: 100%;
+  }
+
+  .border-completed {
+    border-color: $green;
+  }
+
+  .border-in-progress {
+    border-color: $yellow;
+  }
+
+  .border-pending {
+    border-color: $blue;
+  }
+
+  .icon-status {
+    border-radius: 2%;
+    border: 0;
+    max-width: 100%;
+    max-height: 27px;
+    width: auto;
+    height: auto;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .text-status {
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: bold;
+    padding-left: 0.25rem;
+    font-size: $font-size-base;     
+  }
+
+  .course-completed {
+      color: $green;
+  }
+
+  .course-pending {
+      color: $blue;
+  }
+
+  .course-in-progress {
+      color: $yellow;
+  }
+
+  .title-date {
+    font-weight: bold;
+    font-size: $font-size-small;
+    text-align: right;
+    padding-top: 0.5rem;
+  }
+
+  .text-date {
+    font-weight: normal !important;
+    font-size: $font-size-small;
+  }
+
+  .title-score {
+    padding-left: 0.5rem;
+    font-weight: bold;
+    font-size: $font-size-base;
+  }
+
+  .text-score {
+    font-weight: normal !important;
+  }
+}
+
+.margin-input-container {
+  margin-right: 1rem;
+}
+
+
+.container-main-settings {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.container-main-settings .title-header {
+  padding-left: 0.25rem;
+}
+
+.container-main-settings .container-settings {
+  background: white;
+  border-radius: 5px;
+  margin-top: 0.5rem;
+  border: dashed 1px;
+  padding: 0.7rem;
+}
+
+.container-main-settings.ng-hide-add {
+  display: block !important;
+  @include animation("1s hideDetailOption forwards");
+}
+
+
+.container-main-settings.ng-hide-remove {
+  display: block !important;
+  @include animation("1s showDetailOption forwards");
+}
+
+.container-main-settings.ng-hide {
+  display: block !important;
+  opacity:0;
+  max-height:0px;
+  transform: scale(0);
+}
+
+
+.containerFilterApply {
+    margin-bottom: 10px;
+    margin-top: 20px;
+    text-align: center;
+    padding: 8px 35px 8px 14px;
+    text-shadow: 0 1px 0 rgba(255,255,255,.5);
+    background-color: $yellow-light;
+    border: 1px solid $yellow;
+    color: #8a6d3b;
+}
+
+.containerFilterApply .smallicon {
+    height: 16px;
+    width: 16px;
+    vertical-align: middle;
+}
+
+.containerFilterApply p {
+  padding-top: 0.5rem;
+}
+
+
+@keyframes hideDetailOption {
+  0% {
+    max-height: 999px;
+    opacity:1;
+     transform: scale(1);
+  }
+   30% {
+     transform: scale(1.1);
+  } 
+  100% { 
+    opacity:0;
+    max-height:0px;
+    transform: scale(0);
+  }
+}
+
+@-webkit-keyframes hideDetailOption {
+  0% {
+    max-height: 999px;
+    opacity:1;
+    transform: scale(1);
+  }
+   30% {
+     transform: scale(1.1);
+  }
+  100% { 
+    opacity:0;
+    max-height:0px;
+    transform: scale(0);
+  }
+}
+
+@keyframes showDetailOption {
+  0% {
+    max-height:0px;
+    opacity:0;
+    transform: scale(0.5);
+  }
+  70% {
+    transform: scale(1.1);
+  }
+  100% { 
+    opacity:1;
+    max-height:999px;
+    transform: scale(1);
+  }
+}
+
+@-webkit-keyframes showDetailOption {
+  0% {
+    max-height:0px;
+    opacity:0;
+    transform: scale(0.5);
+  }
+  70% {
+    transform: scale(1.1);
+  }
+  100% { 
+    opacity:1;
+    max-height:999px;
+    transform: scale(1);
+  }
+}
+
+
+.item-progress {
+  @extend .item-avatar;
+  padding-left: $chart-size + ($item-padding * 2);
+  min-height: $chart-size + ($item-padding * 2);
+  >.progress-chart-container {
+    max-width: $chart-size;
+    max-height: $chart-size;
+    position: absolute;
+    top: $item-padding;
+    left: $item-padding;
+  }
+  h2 {
+    font-size: 21px;
+  }
+}
+
+.progress-chart-container {
+  height: $chart-size;
+  width: $chart-size;
+
+  .progress-doughnut {
+    position: relative;
+    height: $chart-size;
+    width: $chart-size;
+    background-clip: padding-box;
+    border: $doughnut-border-size solid $doughnut-empty-colour;
+    border-radius: 50%;
+    box-sizing: border-box;
+    display: table;
+
+    .progress-text {
+      display: table-cell;
+      text-align: center;
+      vertical-align: middle;
+      color: $doughnut-text-colour;
+      font-size: 95%;
+      letter-spacing: -1px;
+    }
+
+    .progress-indicator {
+      position: absolute;
+      top: ($doughnut-border-size * -1);
+      left: ($doughnut-border-size * -1);
+      height: $chart-size;
+      width: $chart-size;
+
+      svg {
+        position: relative;
+        height: 100%;
+        width: 100%;
+
+        .circle {
+          stroke-width: $doughnut-border-size;
+          stroke: $doughnut-fill-colour;
+          fill: none;
+          stroke-dasharray: $doughnut-dasharray;
+          stroke-dashoffset: $doughnut-dasharray;
+          transform: rotate(-90deg);
+          transform-origin: center center;
+
+          @for $i from 1 through 100 {
+              &.percent-#{$i} {
+                  stroke-dashoffset: $doughnut-dasharray - ($i / 100 * $doughnut-dasharray);
+              }
+          }
+        }
+      }
+    }
+  }
+
+  .no-progress {
+    height: $chart-size;
+    width: $chart-size;
+    background-color: $doughnut-empty-colour;
+    border-radius: 50%;
+    position: relative;
+    border: 0.5px solid $doughnut-border-colour;
+
+    .icon {
+      position: absolute;
+      text-align: center;
+      /*rtl:ignore*/
+      left: -1px;
+      top: -1px;
+      right: 0;
+      bottom: 0;
+      margin: 0;
+      color: $white;
+      height: $chart-size;
+      width: $chart-size;
+      line-height: $chart-size;
+      font-size: ($chart-size / 2) + 10px;
+      &:before {
+        width: $chart-size;
+      }
+    }
+  }
+}
+
+.mm-site_mm_coursescategories .item-icon-left,
+mm-course-list-item .item-icon-left {
+  color: $black;
+}

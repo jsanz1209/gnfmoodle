@@ -1,0 +1,18 @@
+
+.foreground-ion-edit.ion-edit:before {
+    position: relative;
+    left: 120px;
+    bottom: 15px;
+    font-size: 24px;
+}
+
+.mm-site_mm_user-profile .mm-tab-handlers {
+    padding-bottom: 16px;
+}
+
+.container-info-profile {
+	@extend .item;
+	@extend .item-text-wrap;
+	@extend .item-avatar-center;
+	padding-top: 2rem !important;
+}

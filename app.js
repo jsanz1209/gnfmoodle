@@ -27,4 +27,9 @@ angular.module('mm', ['ionic', 'ngCordova', 'angular-md5', 'pascalprecht.transla
             StatusBar.styleLightContent();
         }
     });
+})
+
+.config(function($mdGestureProvider) {   
+    // To skip attachToDocument() and addEventListener(s)
+    $mdGestureProvider.skipClickHijack();     
 });

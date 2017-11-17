@@ -13685,25 +13685,6 @@ ion-side-menu li.item.item-divider, ion-side-menu .mm-grades-table li.item-divid
   .mm-site_myoverview mm-course-list-progress .card .list.block:last-child .item, .mm-site_myoverview mm-course-list-progress .card .list.block:last-child .mm-grades-table .itemcenter, .mm-grades-table .mm-site_myoverview mm-course-list-progress .card .list.block:last-child .itemcenter, .mm-site_myoverview mm-course-list-progress .card .list.block:last-child .container-info-profile {
     border-bottom: 0; }
 
-.qbehaviour_deferredcbm_actual_percentage {
-  font-weight: bold; }
-
-.qbehaviour_deferredcbm_judgementok {
-  font-weight: bold;
-  color: #394e00; }
-
-.qbehaviour_deferredcbm_slightlyunderconfident, .qbehaviour_deferredcbm_slightlyoverconfident {
-  font-weight: bold;
-  color: #a82d3b; }
-
-.qbehaviour_deferredcbm_underconfident, .qbehaviour_deferredcbm_overconfident {
-  font-weight: bold;
-  color: #cb3d4d; }
-
-.mma-qbehaviour-deferredcbm-certainty-title, .item.mma-qbehaviour-deferredcbm-certainty-title, .mm-grades-table .mma-qbehaviour-deferredcbm-certainty-title.itemcenter, .mma-qbehaviour-deferredcbm-certainty-title.container-info-profile, .item.mma-qbehaviour-deferredcbm-certainty-title p, .mm-grades-table .mma-qbehaviour-deferredcbm-certainty-title.itemcenter p, .mma-qbehaviour-deferredcbm-certainty-title.container-info-profile p {
-  font-weight: bold;
-  font-size: 16px; }
-
 .mm-site_mod_assign div.submissioneditable p,
 .mm-site_mod_assign-submission div.submissioneditable p {
   color: #cb3d4d; }
@@ -13901,19 +13882,6 @@ p.mma-mod-assign-warning {
   margin: 0;
   width: auto; }
 
-.mm-site_mod_choice .chart {
-  max-width: 400px;
-  margin: 0 auto; }
-
-@media (min-width: 767px) {
-  .mm-site_mod_choice .col, .mm-site_mod_choice .mm-data-contents td, .mm-data-contents .mm-site_mod_choice td, .mm-site_mod_choice .mm-data-contents th, .mm-data-contents .mm-site_mod_choice th {
-    border-left: 1px solid #dddddd; }
-    .mm-site_mod_choice .col.item, .mm-site_mod_choice .mm-grades-table .col.itemcenter, .mm-grades-table .mm-site_mod_choice .col.itemcenter, .mm-site_mod_choice .mm-grades-table .mm-data-contents td.itemcenter, .mm-grades-table .mm-data-contents .mm-site_mod_choice td.itemcenter, .mm-site_mod_choice .mm-data-contents .mm-grades-table td.itemcenter, .mm-data-contents .mm-grades-table .mm-site_mod_choice td.itemcenter, .mm-site_mod_choice .mm-grades-table .mm-data-contents th.itemcenter, .mm-grades-table .mm-data-contents .mm-site_mod_choice th.itemcenter, .mm-site_mod_choice .mm-data-contents .mm-grades-table th.itemcenter, .mm-data-contents .mm-grades-table .mm-site_mod_choice th.itemcenter, .mm-site_mod_choice .col.container-info-profile, .mm-site_mod_choice .mm-data-contents td.container-info-profile, .mm-data-contents .mm-site_mod_choice td.container-info-profile, .mm-site_mod_choice .mm-data-contents th.container-info-profile, .mm-data-contents .mm-site_mod_choice th.container-info-profile, .mm-site_mod_choice .mm-data-contents td.item, .mm-data-contents .mm-site_mod_choice td.item, .mm-site_mod_choice .mm-data-contents th.item, .mm-data-contents .mm-site_mod_choice th.item, .mm-site_mod_choice .col .chart-item, .mm-site_mod_choice .mm-data-contents td .chart-item, .mm-data-contents .mm-site_mod_choice td .chart-item, .mm-site_mod_choice .mm-data-contents th .chart-item, .mm-data-contents .mm-site_mod_choice th .chart-item {
-      margin-top: 0;
-      border-top: 0; }
-    .mm-site_mod_choice .col:first-child, .mm-site_mod_choice .mm-data-contents td:first-child, .mm-data-contents .mm-site_mod_choice td:first-child, .mm-site_mod_choice .mm-data-contents th:first-child, .mm-data-contents .mm-site_mod_choice th:first-child {
-      border-left: 0; } }
-
 .mma-chat-notice {
   text-align: center;
   margin-top: 10px; }
@@ -13948,6 +13916,19 @@ p.mma-mod-assign-warning {
   border: 0; }
   .mma-mod_chat-users-modal .button-bar .button {
     border: 0; }
+
+.mm-site_mod_choice .chart {
+  max-width: 400px;
+  margin: 0 auto; }
+
+@media (min-width: 767px) {
+  .mm-site_mod_choice .col, .mm-site_mod_choice .mm-data-contents td, .mm-data-contents .mm-site_mod_choice td, .mm-site_mod_choice .mm-data-contents th, .mm-data-contents .mm-site_mod_choice th {
+    border-left: 1px solid #dddddd; }
+    .mm-site_mod_choice .col.item, .mm-site_mod_choice .mm-grades-table .col.itemcenter, .mm-grades-table .mm-site_mod_choice .col.itemcenter, .mm-site_mod_choice .mm-grades-table .mm-data-contents td.itemcenter, .mm-grades-table .mm-data-contents .mm-site_mod_choice td.itemcenter, .mm-site_mod_choice .mm-data-contents .mm-grades-table td.itemcenter, .mm-data-contents .mm-grades-table .mm-site_mod_choice td.itemcenter, .mm-site_mod_choice .mm-grades-table .mm-data-contents th.itemcenter, .mm-grades-table .mm-data-contents .mm-site_mod_choice th.itemcenter, .mm-site_mod_choice .mm-data-contents .mm-grades-table th.itemcenter, .mm-data-contents .mm-grades-table .mm-site_mod_choice th.itemcenter, .mm-site_mod_choice .col.container-info-profile, .mm-site_mod_choice .mm-data-contents td.container-info-profile, .mm-data-contents .mm-site_mod_choice td.container-info-profile, .mm-site_mod_choice .mm-data-contents th.container-info-profile, .mm-data-contents .mm-site_mod_choice th.container-info-profile, .mm-site_mod_choice .mm-data-contents td.item, .mm-data-contents .mm-site_mod_choice td.item, .mm-site_mod_choice .mm-data-contents th.item, .mm-data-contents .mm-site_mod_choice th.item, .mm-site_mod_choice .col .chart-item, .mm-site_mod_choice .mm-data-contents td .chart-item, .mm-data-contents .mm-site_mod_choice td .chart-item, .mm-site_mod_choice .mm-data-contents th .chart-item, .mm-data-contents .mm-site_mod_choice th .chart-item {
+      margin-top: 0;
+      border-top: 0; }
+    .mm-site_mod_choice .col:first-child, .mm-site_mod_choice .mm-data-contents td:first-child, .mm-data-contents .mm-site_mod_choice td:first-child, .mm-site_mod_choice .mm-data-contents th:first-child, .mm-data-contents .mm-site_mod_choice th:first-child {
+      border-left: 0; } }
 
 .mm-site_mod_data .recordcheckbox {
   display: none; }
@@ -14474,6 +14455,25 @@ ion-popover-view {
   .mm-site_mod_wiki .mma-mod_wiki-subwiki-picker .item.item-selected .icon, .mm-site_mod_wiki .mma-mod_wiki-subwiki-picker .mm-grades-table .item-selected.itemcenter .icon, .mm-grades-table .mm-site_mod_wiki .mma-mod_wiki-subwiki-picker .item-selected.itemcenter .icon, .mm-site_mod_wiki .mma-mod_wiki-subwiki-picker .item-selected.container-info-profile .icon {
     font-size: 24px; }
 
+.qbehaviour_deferredcbm_actual_percentage {
+  font-weight: bold; }
+
+.qbehaviour_deferredcbm_judgementok {
+  font-weight: bold;
+  color: #394e00; }
+
+.qbehaviour_deferredcbm_slightlyunderconfident, .qbehaviour_deferredcbm_slightlyoverconfident {
+  font-weight: bold;
+  color: #a82d3b; }
+
+.qbehaviour_deferredcbm_underconfident, .qbehaviour_deferredcbm_overconfident {
+  font-weight: bold;
+  color: #cb3d4d; }
+
+.mma-qbehaviour-deferredcbm-certainty-title, .item.mma-qbehaviour-deferredcbm-certainty-title, .mm-grades-table .mma-qbehaviour-deferredcbm-certainty-title.itemcenter, .mma-qbehaviour-deferredcbm-certainty-title.container-info-profile, .item.mma-qbehaviour-deferredcbm-certainty-title p, .mm-grades-table .mma-qbehaviour-deferredcbm-certainty-title.itemcenter p, .mma-qbehaviour-deferredcbm-certainty-title.container-info-profile p {
+  font-weight: bold;
+  font-size: 16px; }
+
 .mma-qtype-ddimageortext-container mm-loading {
   position: absolute;
   left: 50%; }
@@ -14569,6 +14569,99 @@ ion-popover-view {
 .mma-qtype-ddimageortext-container .drag.beingdragged {
   z-index: 3;
   box-shadow: 3px 3px 4px #626262; }
+
+.mma-qtype-ddmarker-container mm-loading {
+  position: absolute;
+  left: 50%; }
+
+.mma-qtype-ddmarker-container .qtext {
+  margin-bottom: 0.5em;
+  display: block; }
+
+.mma-qtype-ddmarker-container div.droparea img {
+  border: 1px solid #626262;
+  max-width: 100%; }
+
+.mma-qtype-ddmarker-container .draghome img, .mma-qtype-ddmarker-container .draghome span {
+  visibility: hidden; }
+
+.mma-qtype-ddmarker-container .dragitems .dragitem {
+  cursor: pointer;
+  position: absolute;
+  z-index: 2; }
+
+.mma-qtype-ddmarker-container .dropzones {
+  position: absolute; }
+
+.mma-qtype-ddmarker-container .dropzones svg {
+  z-index: 3; }
+
+.mma-qtype-ddmarker-container .dragitem.beingdragged .markertext {
+  z-index: 5;
+  box-shadow: 3px 3px 4px #626262; }
+
+.mma-qtype-ddmarker-container .dragitems .draghome {
+  margin: 10px;
+  display: inline-block; }
+
+.mma-qtype-ddmarker-container .dragitems.readonly .dragitem {
+  cursor: auto; }
+
+.mma-qtype-ddmarker-container div.ddarea {
+  text-align: center; }
+
+.mma-qtype-ddmarker-container div.ddarea .markertexts {
+  min-height: 80px;
+  position: absolute;
+  text-align: left; }
+
+.mma-qtype-ddmarker-container .dropbackground {
+  margin: 0 auto; }
+
+.mma-qtype-ddmarker-container div.dragitems div.draghome, .mma-qtype-ddmarker-container div.dragitems div.dragitem,
+.mma-qtype-ddmarker-container div.draghome, .mma-qtype-ddmarker-container div.drag {
+  font: 13px/1.231 arial,helvetica,clean,sans-serif; }
+
+.mma-qtype-ddmarker-container div.dragitems span.markertext,
+.mma-qtype-ddmarker-container div.markertexts span.markertext {
+  margin: 0 5px;
+  z-index: 2;
+  background-color: #ffffff;
+  border: 2px solid #626262;
+  padding: 5px;
+  display: inline-block;
+  zoom: 1;
+  border-radius: 10px; }
+
+.mma-qtype-ddmarker-container div.markertexts span.markertext {
+  z-index: 3;
+  background-color: #feefd1;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #fbad1a;
+  position: absolute; }
+
+.mma-qtype-ddmarker-container span.wrongpart {
+  background-color: #feefd1;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #fbad1a;
+  padding: 5px;
+  border-radius: 10px;
+  filter: alpha(opacity=60);
+  opacity: 0.6;
+  margin: 5px;
+  display: inline-block; }
+
+.mma-qtype-ddmarker-container div.dragitems img.target {
+  position: absolute;
+  left: -7px;
+  /* This must be half the size of the target image, minus 0.5. */
+  top: -7px;
+  /* In other words, this works for a 15x15 cross-hair. */ }
+
+.mma-qtype-ddmarker-container div.dragitems div.draghome img.target {
+  display: none; }
 
 .mma-qtype-ddwtos-container .qtext {
   margin-bottom: 0.5em;
@@ -14666,99 +14759,6 @@ ion-popover-view {
 .mma-qtype-ddwtos-container sub {
   bottom: -0.2em; }
 
-.mma-qtype-ddmarker-container mm-loading {
-  position: absolute;
-  left: 50%; }
-
-.mma-qtype-ddmarker-container .qtext {
-  margin-bottom: 0.5em;
-  display: block; }
-
-.mma-qtype-ddmarker-container div.droparea img {
-  border: 1px solid #626262;
-  max-width: 100%; }
-
-.mma-qtype-ddmarker-container .draghome img, .mma-qtype-ddmarker-container .draghome span {
-  visibility: hidden; }
-
-.mma-qtype-ddmarker-container .dragitems .dragitem {
-  cursor: pointer;
-  position: absolute;
-  z-index: 2; }
-
-.mma-qtype-ddmarker-container .dropzones {
-  position: absolute; }
-
-.mma-qtype-ddmarker-container .dropzones svg {
-  z-index: 3; }
-
-.mma-qtype-ddmarker-container .dragitem.beingdragged .markertext {
-  z-index: 5;
-  box-shadow: 3px 3px 4px #626262; }
-
-.mma-qtype-ddmarker-container .dragitems .draghome {
-  margin: 10px;
-  display: inline-block; }
-
-.mma-qtype-ddmarker-container .dragitems.readonly .dragitem {
-  cursor: auto; }
-
-.mma-qtype-ddmarker-container div.ddarea {
-  text-align: center; }
-
-.mma-qtype-ddmarker-container div.ddarea .markertexts {
-  min-height: 80px;
-  position: absolute;
-  text-align: left; }
-
-.mma-qtype-ddmarker-container .dropbackground {
-  margin: 0 auto; }
-
-.mma-qtype-ddmarker-container div.dragitems div.draghome, .mma-qtype-ddmarker-container div.dragitems div.dragitem,
-.mma-qtype-ddmarker-container div.draghome, .mma-qtype-ddmarker-container div.drag {
-  font: 13px/1.231 arial,helvetica,clean,sans-serif; }
-
-.mma-qtype-ddmarker-container div.dragitems span.markertext,
-.mma-qtype-ddmarker-container div.markertexts span.markertext {
-  margin: 0 5px;
-  z-index: 2;
-  background-color: #ffffff;
-  border: 2px solid #626262;
-  padding: 5px;
-  display: inline-block;
-  zoom: 1;
-  border-radius: 10px; }
-
-.mma-qtype-ddmarker-container div.markertexts span.markertext {
-  z-index: 3;
-  background-color: #feefd1;
-  border-style: solid;
-  border-width: 2px;
-  border-color: #fbad1a;
-  position: absolute; }
-
-.mma-qtype-ddmarker-container span.wrongpart {
-  background-color: #feefd1;
-  border-style: solid;
-  border-width: 2px;
-  border-color: #fbad1a;
-  padding: 5px;
-  border-radius: 10px;
-  filter: alpha(opacity=60);
-  opacity: 0.6;
-  margin: 5px;
-  display: inline-block; }
-
-.mma-qtype-ddmarker-container div.dragitems img.target {
-  position: absolute;
-  left: -7px;
-  /* This must be half the size of the target image, minus 0.5. */
-  top: -7px;
-  /* In other words, this works for a 15x15 cross-hair. */ }
-
-.mma-qtype-ddmarker-container div.dragitems div.draghome img.target {
-  display: none; }
-
 .mma-qtype-gapselect-container p {
   margin: 0 0 .5em; }
 
@@ -14773,6 +14773,15 @@ ion-popover-view {
   border-radius: 4px;
   margin-bottom: 10px;
   background: #f5f5f5; }
+
+.mma-qtype-match-container .item-select select,
+.mma-qtype-match-container .item-select .mm-select-fix {
+  padding: 0 36px 0 0;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column; }
 
 .mma-qtype-multianswer-container p {
   margin: 0 0 .5em; }
@@ -14806,15 +14815,6 @@ ion-popover-view {
 .mma-qtype-multianswer-container input[type="radio"], .mma-qtype-multianswer-container input[type="checkbox"] {
   margin-top: -4px;
   margin-right: 7px; }
-
-.mma-qtype-match-container .item-select select,
-.mma-qtype-match-container .item-select .mm-select-fix {
-  padding: 0 36px 0 0;
-  max-width: 100%;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  flex-direction: column; }
 
 /*!
  * AngularJS Material Design

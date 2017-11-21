@@ -7,7 +7,7 @@
         </mm-context-menu>
     </ion-nav-buttons>
     <mm-split-view load-when="sectionsLoaded" load="{{sectionToLoad}}" component="mmCoreCourseSectionsList">
-        <ion-content mm-state-class>
+        <ion-content mm-state-class fab-scroll button-fab="arrowUpDetail">
            <ion-refresher on-refresh="doRefresh()" pulling-text="{{ 'mm.core.pulltorefresh' | translate }}" ng-if="sectionsLoaded"></ion-refresher>
             <mm-loading hide-until="sectionsLoaded">
                 <ul class="list">
@@ -32,4 +32,7 @@
             </mm-loading>
         </ion-content>
     </mm-split-view>
+    <md-button id="arrowUpDetail" class="md-fab md-fab-bottom-right hidecustom" aria-label="Up" ng-click="scrollToTop()" md-colors="{background: 'green'}"  ng-style="{'opacity': 0.7}">
+          <md-icon md-svg-src="img/custom/ic_arrow_up_24px.svg"></md-icon>
+    </md-button>
 </ion-view>

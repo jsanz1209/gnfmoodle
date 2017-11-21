@@ -24,7 +24,7 @@ angular.module('mm.core.courses')
 
 .constant("MAX_WIDTH_SCREEN", 600)
 
-.controller('mmCoursesListCtrl', function($scope, $mmCourses, $mmCoursesDelegate, $mmUtil, $mmEvents, $mmSite, $q, $mmApp, $ionicPlatform, $mdSelect, $timeout, $filter,
+.controller('mmCoursesListCtrl', function($scope, $mmCourses, $mmCoursesDelegate, $mmUtil, $mmEvents, $mmSite, $q, $mmApp, $ionicPlatform, $mdSelect, $timeout, $filter, $ionicScrollDelegate,
             mmCoursesEventMyCoursesUpdated, mmCoreEventSiteUpdated, MAX_WIDTH_SCREEN) {
 
     var updateSiteObserver,
@@ -408,8 +408,13 @@ angular.module('mm.core.courses')
         }, 500);
     }
 
+    //Event triggerd when press over fab button right
+    $scope.scrollToTop = function() {
+        $ionicScrollDelegate.scrollTop(true);
+    }
 
 
+    //Event triggered when device chage it orientation
     window.addEventListener("orientationchange", function() {
         var auxOptionSortStatus = angular.copy($scope.optionSortStatus);
         $scope.isLargeScreen = window.screen.width >= MAX_WIDTH_SCREEN;

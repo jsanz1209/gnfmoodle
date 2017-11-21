@@ -23,7 +23,7 @@ angular.module('mm.core.course')
  */
 .controller('mmCourseSectionsCtrl', function($mmCourse, $mmUtil, $scope, $stateParams, $translate, $mmCourseHelper, $mmEvents,
             $mmSite, $mmCoursePrefetchDelegate, $mmCourses, $q, $ionicHistory, $ionicPlatform, mmCoreCourseAllSectionsId,
-            mmCoreEventSectionStatusChanged, $state, $timeout, $mmCoursesDelegate, $controller) {
+            mmCoreEventSectionStatusChanged, $state, $timeout, $mmCoursesDelegate, $controller, $ionicScrollDelegate) {
     var courseId = $stateParams.courseid,
         sectionId = parseInt($stateParams.sid, 10),
         sectionNumber = parseInt($stateParams.sectionnumber, 10),
@@ -117,6 +117,11 @@ angular.module('mm.core.course')
             calculateSectionStatus(false);
         }
     };
+
+    //Event triggerd when press over fab button right
+    $scope.scrollToTop = function() {
+        $ionicScrollDelegate.scrollTop(true);
+    }
 
     // Convenience function to calculate icon for the contextual menu.
     function getDownloadSectionIcon() {

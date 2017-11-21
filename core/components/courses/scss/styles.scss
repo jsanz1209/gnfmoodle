@@ -337,6 +337,13 @@ md-option .md-text {
   }
 }
 
+.md-fab.md-fab-bottom-right {
+    transition-property: transform, background-color, box-shadow;
+}
+.md-fab.md-fab-bottom-right.hidecustom {
+    transform: scale(0);
+}
+
 
 .item-progress {
   @extend .item-avatar;

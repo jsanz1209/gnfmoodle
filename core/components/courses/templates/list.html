@@ -2,7 +2,7 @@
     <ion-nav-buttons side="secondary">
         <a ui-sref="site.mm_searchcourses" ng-if="searchEnabled" class="button button-icon ion-ios-search-strong"></a>
     </ion-nav-buttons>
-    <ion-content padding="true" mm-state-class>
+    <ion-content padding="true" mm-state-class fab-scroll button-fab="arrowUp">
         <!-- ion-refresher needs to be direct child of ion-content to work with native scrolling -->
         <ion-refresher pulling-text="{{ 'mm.core.pulltorefresh' | translate }}" ng-if="coursesLoaded" on-refresh="refreshCourses()">
         </ion-refresher>
@@ -133,4 +133,9 @@
             </mm-empty-box>
         </mm-loading>
     </ion-content>
+
+    <md-button id="arrowUp" class="md-fab md-fab-bottom-right hidecustom" aria-label="Up" md-colors="{background: 'green'}"  ng-style="{'opacity': 0.7}" ng-click="scrollToTop()">
+          <md-icon md-svg-src="img/custom/ic_arrow_up_24px.svg"></md-icon>
+    </md-button>
+
 </ion-view>

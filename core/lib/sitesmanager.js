@@ -225,7 +225,7 @@ angular.module('mm.core')
             data.username = 'a';
             data.password = 'b';
             data.service = 'c';
-            data.customParam = 'bundleId';
+            data.id_app_ue = mmCoreConfigConstants.id_app_ue;
         }
 
         return $http.post(siteurl + '/login/token.php', data, {timeout: 30000, responseType: 'json'}).then(function(data) {
@@ -271,7 +271,7 @@ angular.module('mm.core')
             username: username,
             password: password,
             service: service,
-            customParam: 'bundleId2'
+            id_app_ue: mmCoreConfigConstants.id_app_ue
         };
 
         return $http.post(loginurl, data).then(function(response) {

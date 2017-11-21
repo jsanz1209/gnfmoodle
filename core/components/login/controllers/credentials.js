@@ -116,11 +116,7 @@ angular.module('mm.core.login')
         $scope.pageLoaded = true;
     }
 
-    $scope.login = function($event) {
-
-        $event.preventDefault();
-        $event.stopPropagation();
-        $event.stopImmediatePropagation();
+    $scope.login = function() {
 
         $mmApp.closeKeyboard();
 
